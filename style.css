@@ -65,6 +65,24 @@ body {
   flex: 1;
 }
 
+/* 우선순위 디자인*/
+.priority {
+  padding: 0.3rem;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.priority option[value="1"] {
+  color: red;
+  font-weight: bold;
+}
+.priority option[value="2"] {
+  color: orange;
+}
+.priority option[value="3"] {
+  color: green;
+}
+
 /*  아이콘 */
 .fa-check,
 .fa-trash-can {
