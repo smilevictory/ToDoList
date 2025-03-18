@@ -17,6 +17,23 @@
   <body>
     <section class="container">
       <header class="header"><h1>오늘의 할일</h1></header>
+      <button id="show-weekly-tasks">📅 요일별 할 일 보기</button>
+      <table id="weekly-tasks-table" class="hidden">
+        <thead>
+          <tr>
+            <th>월</th>
+            <th>화</th>
+            <th>수</th>
+            <th>목</th>
+            <th>금</th>
+            <th>토</th>
+            <th>일</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="weekly-tasks-body"></tr>
+        </tbody>
+      </table>
       <ul class="items"></ul>
       <footer class="footer">
         <input

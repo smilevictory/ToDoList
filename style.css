@@ -135,3 +135,25 @@ body {
 .fa-plus:hover {
   transform: translateY(-10px) scale(1.1);
 }
+
+#weekly-tasks-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: #fff;
+}
+
+#weekly-tasks-table th,
+#weekly-tasks-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+#weekly-tasks-table .hidden {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}

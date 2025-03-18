@@ -44,6 +44,43 @@ function createItem(text) {
   return itemRow;
 }
 
+// 요일별 고정 리스트 표 생성하는 버튼 기능 추가
+const showWeeklyTasksBtn = document.getElementById("show-weekly-tasks");
+const weeklyTasksTable = document.getElementById("weekly-tasks-table");
+const weeklyTasksBody = document.getElementById("weekly-tasks-body");
+
+const weeklyTasks = {
+  월: ["운동하기"],
+  화: ["책 읽기"],
+  수: ["코딩테스트"],
+  목: ["프로젝트 작업"],
+  금: ["영화 감상"],
+  토: ["정리 정돈"],
+  일: ["휴식"],
+};
+
+// 요일별 할 일 표 생성 함수
+function generateWeeklyTasksTable() {
+  if (weeklyTasksTable.classList.contains("hidden")) {
+    weeklyTasksBody.innerHTML = "";
+    for (let day of ["월", "화", "수", "목", "금", "토", "일"]) {
+      const td = document.createElement("td");
+      td.innerHTML = weeklyTasks[day]
+        .map((task) => `<li>${task}</li>`)
+        .join("");
+      weeklyTasksBody.appendChild(td);
+    }
+    weeklyTasksTable.classList.remove("hidden");
+    showWeeklyTasksBtn.textContent = "📅 닫기";
+  } else {
+    // 표가 보일 때 -> 숨김
+    weeklyTasksTable.classList.add("hidden");
+    showWeeklyTasksBtn.textContent = "📅 요일별 할 일 보기";
+  }
+}
+// 버튼 클릭 이벤트 등록
+showWeeklyTasksBtn.addEventListener("click", generateWeeklyTasksTable);
+
 // 추가함수
 function onAdd() {
   const text = input.value.trim();
